@@ -74,7 +74,6 @@ bool TestsSgb::TestFindByGuid2()
 bool TestsSgb::TestFindByGuid3()
 {
     std::vector<std::string> guids = {
-        "d908aab5-7a90-4cbe-8641-86a553db-X",
         std::string(GalaxyBudsHelper::GALAXYBUDSNEW),
         std::string(GalaxyBudsHelper::HANDSFREESERVICECLASS),
         std::string(GalaxyBudsHelper::LEAUDIO),
@@ -88,7 +87,6 @@ bool TestsSgb::TestFindByGuid3()
 bool TestsSgb::TestFindByGuid4()
 {
     std::vector<std::string> guids = {
-        "d908aab5-7a90-4cbe-8641-86a553db-X",
         std::string(GalaxyBudsHelper::GALAXYBUDSNEW),
     };
     std::pair<GalaxyBudsModelIds, std::string> pairModelColor = GalaxyBudsHelper::SearchModelColor(guids, "");
@@ -539,11 +537,11 @@ void TestsSgb::Test(const char *name, bool b)
 
     if (b)
     {
-        Logger::Debug("%s%s: PASS", name, space.c_str());        
+        Logger::Debug("%s%s: PASS", name, space.c_str());
     }
     else
     {
-        Logger::Debug("%s%s: FAIL", name, space.c_str());        
+        Logger::Debug("%s%s: FAIL", name, space.c_str());
     }
 }
 

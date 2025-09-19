@@ -35,6 +35,6 @@ namespace MagicPodsCore{
         bool TestBattery3();
         void Test(const char *name, bool b);
     public:
-        TestsSgb();        
-    };    
+        TestsSgb();
+    };
 }

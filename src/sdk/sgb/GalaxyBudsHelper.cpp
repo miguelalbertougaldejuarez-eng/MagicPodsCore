@@ -4,6 +4,7 @@
 
 #include "GalaxyBudsHelper.h"
 #include <iostream>
+#include "Logger.h"
 
 namespace MagicPodsCore
 {
@@ -191,18 +192,22 @@ namespace MagicPodsCore
                         GalaxyBudsModelIds model = GalaxyBudsHelper::GetModelFromColoredModel(coloredModel);
                         return {model, hexId};
                     }
+                }                
+                else
+                {
+                    Logger::Error("Unknown model and color %s", hexId);
+                }
+            }
+            else
+            {
+                if (std::find(_guids.begin(), _guids.end(), HANDSFREESERVICECLASS) != _guids.end() &&
+                    std::find(_guids.begin(), _guids.end(), LEAUDIO) != _guids.end())
+                {
+                    return {GalaxyBudsModelIds::GalaxyBuds2Pro, ""};
                 }
                 else
                 {
-                    if (std::find(_guids.begin(), _guids.end(), HANDSFREESERVICECLASS) != _guids.end() &&
-                        std::find(_guids.begin(), _guids.end(), LEAUDIO) != _guids.end())
-                    {
-                        return {GalaxyBudsModelIds::GalaxyBuds2Pro, ""};
-                    }
-                    else
-                    {
-                        return {GalaxyBudsModelIds::GalaxyBuds2, ""};
-                    }
+                    return {GalaxyBudsModelIds::GalaxyBuds2, ""};
                 }
             }
         };
